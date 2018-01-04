@@ -1,0 +1,37 @@
+{
+  "name": "webpack-template",
+  "version": "1.0.0",
+  "description": "webpack template",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --hot --host 0.0.0.0",
+    "build": "cross-env NODE_ENV=prod webpack -p",
+    "lint": "cross-env NODE_ENV=lint webpack-dev-server --open",
+    "serve": "http-server ./dist -p 8888 -o"
+  },
+  "author": "Du En Yang <377153400@qq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.14.0",
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "postcss-loader": "^2.0.10",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
+  }
+}
