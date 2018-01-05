@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --hot --host 0.0.0.0",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --hot --colors",
     "build": "cross-env NODE_ENV=prod webpack -p",
     "lint": "cross-env NODE_ENV=lint webpack-dev-server --open",
     "serve": "http-server ./dist -p 8888 -o"

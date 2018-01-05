@@ -1,3 +1,7 @@
-.red{
+body {
   background-color: red;
+}
+
+.bg {
+  background: url('../image/a.jpg')
 }

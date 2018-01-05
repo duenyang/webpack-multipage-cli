@@ -24,7 +24,7 @@ module.exports = webpackMerge(webpackBase,{
         ]
     },
     devServer:{
-        contentBase:config.devServerOutputPath,
+        contentBase: '../dist',
         overlay:{
             errors:true,
             warnings:true
