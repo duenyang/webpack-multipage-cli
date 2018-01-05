@@ -1,6 +1,6 @@
 # webpack-template
 
-###用webpack构建的前端项目模板(架构)
+### 用webpack构建的前端项目模板(架构)
 
 * 根据官方文档 `https://doc.webpack-china.org/` 进行配置(webpack3)
 
