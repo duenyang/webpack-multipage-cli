@@ -13,8 +13,8 @@ const config = require("./config");
 module.exports = webpackMerge(webpackBase,{
     // 插件
     plugins: [
-      // new webpack.NamedModulesPlugin(),
-      // new webpack.HotModuleReplacementPlugin(),
+    //   new webpack.NamedModulesPlugin(),
+    //   new webpack.HotModuleReplacementPlugin(),
     ],
     // 配置 webpack-dev-server
     devServer:{
