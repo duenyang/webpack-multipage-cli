@@ -16,9 +16,10 @@
 ```
 <img src="../image/a.jpg">
 ```
-> webpack的`url-loader`或者`file-loader`会把图片链接自动打包为`/image/[name].[hash].[ext]`形式，并且放到`dist`目录下，当然，这些都是可以自定义的;
+> `url-loader`或者`file-loader`会把图片链接自动打包为`/image/[name].[hash].[ext]`形式，并且放到`dist`目录下，当然，这些都是可以自定义的;
 
->**对于css文件，建议使用官方推荐的在js文件中使用 `import '../css/a.css`  这种形式**; 使用此模板在开发环境下`(npm run dev)`，css会以`style`标签的形式插入到`html`中，在生产环境中`(npm run build)`时，css会被`extract-text-webpack-plugin`这个插件提取出来，生成对应的`css/[name].[hash].css`文件，以`link`标签的形式插入的`html->head`中;
+>**对于css文件，建议使用官方推荐的在js文件中使用 `import '../css/a.css`  这种形式**; </br>
+使用此模板在开发环境下`(npm run dev)`，css会以`style`标签的形式插入到`html`中，在生产环境中`(npm run build)`时，css会被`extract-text-webpack-plugin`这个插件提取出来，生成对应的`css/[name].[hash].css`文件，以`link`标签的形式插入的`html->head`中;
 
 ---
 
