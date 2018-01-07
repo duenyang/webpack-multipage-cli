@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --hot --colors",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --hot --colors",
     "build": "cross-env NODE_ENV=prod webpack -p",
     "lint": "cross-env NODE_ENV=lint webpack-dev-server --open",
     "serve": "http-server ./dist -p 8888 -o"
@@ -25,6 +25,7 @@
     "eslint-loader": "^1.9.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
+    "html-loader": "^0.5.4",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "postcss-loader": "^2.0.10",
