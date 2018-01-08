@@ -13,7 +13,7 @@
 
 > **2017-01-08新增`html-loader`** ,你可以在html中引入src相对路径，比如:
 
-```JavaScript
+```html
 <img src="../image/a.jpg">
 ```
 > `url-loader`或者`file-loader`会把图片链接自动打包为`/image/[name].[hash].[ext]`形式，并且放到`dist`目录下，当然，这些都是可以自定义的;
