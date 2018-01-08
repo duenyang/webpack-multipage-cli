@@ -28,7 +28,7 @@
   sudo sh ./deploy.sh build prod(or dev) newDir
 
 ```
-> 当然，以上命令均可在此项目的`./deploy.sh` 脚本文件中进行个性化配置</br>
+> 当然，以上命令均可在此项目的`./deploy.sh` 脚本文件中进行个性化配置</br>
   需要**注意**的是，当你每次执行以上命令时，系统都会提示你输入远程服务器密码，你可以把你本地的ssh公钥`（~/.ssh/id_rsa.pub）`配置到对应服务器`（~/.ssh/authorized_keys）`中就可以不需要每一次都输入密码了
 
 ---
