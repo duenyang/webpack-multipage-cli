@@ -28,8 +28,8 @@
   sudo sh ./deploy.sh build prod(or dev) newDir
 
 ```
-> 当然，以上命令均可在此项目的`./deploy.sh` 脚本文件中进行个性化配置</br>
-  需要**注意**的是，当你每次执行以上命令时，系统都会提示你输入远程服务器密码，你可以把你本地的ssh公钥`（~/.ssh/id_rsa.pub）`配置到对应服务器`（~/.ssh/authorized_keys）`中就可以不需要每一次都输入密码了
+当然，以上命令均可在此项目的`./deploy.sh` 脚本文件中进行个性化配置</br>
+需要**注意**的是，当你每次执行以上命令时，系统都会提示你输入远程服务器密码，你可以把你本地的ssh公钥`（~/.ssh/id_rsa.pub）`配置到对应服务器`（~/.ssh/authorized_keys）`中就可以不需要每一次都输入密码了
 
 ---
 
@@ -38,9 +38,9 @@
 ```html
 <img src="../image/a.jpg">
 ```
-> `url-loader`或者`file-loader`会把图片链接自动打包为`/image/[name].[hash].[ext]`形式，并且放到`dist`目录下，当然，这些都是可以自定义的;
+`url-loader`或者`file-loader`会把图片链接自动打包为`/image/[name].[hash].[ext]`形式，并且放到`dist`目录下，当然，这些都是可以自定义的;
 
->**对于css文件，建议使用官方推荐的在js文件中使用 `import '../css/a.css`  这种形式**; </br>
+**对于css文件，建议使用官方推荐的在js文件中使用 `import '../css/a.css`  这种形式**; </br>
 使用此模板在开发环境下`(npm run dev)`，css会以`style`标签的形式插入到`html`中，在生产环境中`(npm run build)`时，css会被`extract-text-webpack-plugin`这个插件提取出来，生成对应的`css/[name].[hash].css`文件，以`link`标签的形式插入的`html->head`中;
 
 ---
