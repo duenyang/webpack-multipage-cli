@@ -3,6 +3,7 @@
 handle=$1;
 env=$2;
 newDir=$3;
+
 # 使用脚本时，把'your remote ip'替换为你的远程服务器地址即可
 # 远程部署机 webhook
 # 如果用远程机器部署的话就要用到以下方法
@@ -13,6 +14,7 @@ newDir=$3;
 #     npm install
 #     npm run build-prod
 # }
+
 # 对于在服务器上没有相关的项目目录的，可以尝试新建一个目录，当然你也可以自己去服务器新建一个
 newRemoteDir(){
     echo "[exec]正在服务器上新建项目目录 remote:your remote ip"
