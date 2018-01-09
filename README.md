@@ -1,10 +1,12 @@
 # webpack-template
 
-### 用webpack构建的前端项目模板(架构)
+### 用webpack构建的多页应用前端项目模板(架构)
 
 * 根据[官方文档](https://doc.webpack-china.org/)进行配置(webpack3)
 
 * 具有自动编译、打包、热更新、代码检查、服务器环境预览、自动部署等功能
+
+* 你可以在此项目中正常使用[vue](https://github.com/vuejs/vue)、[react](https://github.com/facebook/react)等前端框架
 
 * 待补充
   1.  ~~html-loader~~
