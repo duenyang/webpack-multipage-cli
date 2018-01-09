@@ -41,7 +41,7 @@ module.exports = {
     //  需要分号
     "semi": ['error', 'always'],
     //  禁止不必要的分号
-    'no-extra-semi':'error'
+    'no-extra-semi':'error',
     //  存在使用的声明的声明时警告
     'no-unused-vars': ['warn']
   },
