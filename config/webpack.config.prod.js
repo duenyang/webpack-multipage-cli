@@ -17,7 +17,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin")
 module.exports = webpackMerge(webpackBase,{
     plugins:[
         new ExtractTextPlugin({
-            filename: 'css/[name].[hash].css'
+            filename: 'css/[name].[contenthash].css'
         }),
         // 代码压缩
         new webpack.optimize.UglifyJsPlugin({
