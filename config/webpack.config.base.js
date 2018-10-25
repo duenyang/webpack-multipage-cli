@@ -40,7 +40,7 @@ module.exports = {
   devtool: "cheap-module-source-map",
   // 输出文件
   output: {
-    filename: "javascript/[name].bundle.[hash].js",
+    filename: "javascript/[name].[chunkhash:8].js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: '/'
   },
