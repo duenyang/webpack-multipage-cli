@@ -13,11 +13,14 @@ const config = require("./config");
 module.exports = webpackMerge(webpackBase,{
     // 插件
     plugins: [
+    /* hot为true时取消以下两个插件 */
     //   new webpack.NamedModulesPlugin(),
     //   new webpack.HotModuleReplacementPlugin(),
     ],
     // 配置 webpack-dev-server
     devServer:{
+        // 在命令行中隐藏除了错误和警告之外其它信息
+        noInfo: true,
         // 项目根目录
         contentBase: '../dist',
         hot: true,

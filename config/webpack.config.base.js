@@ -3,6 +3,8 @@
  */
 const webpack = require('webpack');
 
+const fs = require('fs')
+
 const path = require("path");
 // 引入模板插件
 const HTMLWebpackPlugin = require("html-webpack-plugin");
@@ -16,6 +18,8 @@ const config = require("./config");
 let HTMLPlugins = [];
 // 入口文件集合
 let Entries = {}
+
+
 
 // 生成多页面的集合
 config.HTMLDirs.forEach((page) => {
@@ -40,7 +44,9 @@ module.exports = {
   devtool: "cheap-module-source-map",
   // 输出文件
   output: {
-    filename: "javascript/[name].[chunkhash:8].js",
+    filename: env === 'prod' // webpack热更新和chunkhash有冲突,在开发环境下使用hash模式
+                ? "javascript/[name].[chunkhash:8].js"
+                : "javascript/[name].[hash:8].js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: '/'
   },
