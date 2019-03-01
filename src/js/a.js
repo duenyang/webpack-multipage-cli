@@ -1,6 +1,6 @@
 import style from '../css/a.css'
 
-import port from '../javascript/portConfig.js'
+import port from '../js/portConfig.js'
 
 console.log('this is page a');
 
