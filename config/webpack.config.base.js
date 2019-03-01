@@ -3,19 +3,23 @@
  */
 const webpack = require('webpack');
 
+const fs = require('fs')
+
 const path = require("path");
 // 引入模板插件
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 //  环境变量
 const env = process.env.NODE_ENV
 // 提取js中的css
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // 引入config.js
 const config = require("./config");
 // 通过 html-webpack-plugin 生成的 HTML 集合
 let HTMLPlugins = [];
 // 入口文件集合
 let Entries = {}
+
+
 
 // 生成多页面的集合
 config.HTMLDirs.forEach((page) => {
@@ -30,7 +34,7 @@ config.HTMLDirs.forEach((page) => {
     }
   });
   HTMLPlugins.push(htmlPlugin);
-  Entries[page] = path.resolve(__dirname, `../src/javascript/${page}.js`);
+  Entries[page] = path.resolve(__dirname, `../src/js/${page}.js`);
 })
 
 module.exports = {
@@ -40,7 +44,9 @@ module.exports = {
   devtool: "cheap-module-source-map",
   // 输出文件
   output: {
-    filename: "javascript/[name].bundle.[hash].js",
+    filename: env === 'prod' // webpack热更新和chunkhash有冲突,在开发环境下使用hash模式
+                ? "js/[name].[chunkhash:8].js"
+                : "js/[name].[hash:8].js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: '/'
   },
@@ -64,28 +70,10 @@ module.exports = {
         test: /\.css$/,
         // 不处理 node_modules 文件中的 css 文件
         exclude: /node_modules/,
-        /* 内嵌style形式 */
-        // use: [{
-        //   loader: 'style-loader'
-        // }, {
-        //   loader: 'css-loader',
-        //   options: {
-        //     // 开启 css 压缩
-        //     minimize: true,
-        //   }
-        // }]
-        /* link形式 (按照官方配置css内图片不能加载，待解决) https://doc.webpack-china.org/loaders/style-loader*/
-        // use: [
-        //   { loader: "style-loader/url" ,options: { convertToAbsoluteUrls: true }},
-        //   { loader: "file-loader", options: { outputPath: 'css/'}},
-        // ]
         /* link打包之后引入对应的css形式(dev模式下为内嵌style形式) */
-        use: env === 'prod'
-          ? ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader']
-          })
-          : ['style-loader', 'css-loader']
+        use: [
+          env === 'prod'?  MiniCssExtractPlugin.loader : 'style-loader', 
+          'css-loader']
       },
       {
         test: /\.js$/,
@@ -118,6 +106,12 @@ module.exports = {
   plugins: [
     // new webpack.BannerPlugin('Created by YourName.')
     // 自动生成 HTML 插件
-    ...HTMLPlugins
+    ...HTMLPlugins,
+    // 从js中提取css配置
+    new MiniCssExtractPlugin({
+			filename: env == 'prod' ? 'css/[name].[contenthash:8].css' : '[name].css',
+			chunkFilename: env == 'prod' ? 'css/[name].[contenthash:8].css' : '[name].css',
+			allChunks: true
+		})
   ],
 }
