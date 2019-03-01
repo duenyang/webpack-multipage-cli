@@ -3,7 +3,7 @@
 
 ### 用webpack4构建的多页应用前端项目模板(架构)
 
-* 根据[官方文档](https://doc.webpack-china.org/)进行配置(webpack3)
+* 根据[官方文档](https://doc.webpack-china.org/)进行配置(webpack4)
 
 * 具有自动编译、打包、热更新、代码检查、服务器环境预览、自动部署等功能
 
